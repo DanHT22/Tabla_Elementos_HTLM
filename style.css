@@ -17,6 +17,31 @@
     --color-negro: #0F0B0B;
     --color-blanco: #CFCFCF;
 }
+body {
+    background: #1F1F1F;
+    text-shadow: 0 0 0.4vw currentColor;
+    overflow: hidden;
+}
+
+.wrapper {
+    position: relative;
+    overflow: hidden;
+    padding: 2%;
+    width: 85%;
+    margin-left: 5%;
+    margin-top: 3%;
+}
+
+.wrapper>input {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
 
 .periodic-table {
     display: grid;
@@ -52,74 +77,23 @@
     top: 0;
     width: 100%;
     height: 100%;
-    border-radius: 10px;
+    border: 2px solid;
     box-sizing: border-box;
+    background: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: black;
-    
-}
-
-.documento{
-    background-color: var(--color-azul-claro);
-}
-
-.metadatos{
-    background-color: var(--color-azul-rey);
-}
-
-.listas{
-    background-color: var(--color-rosa-morado);
-}
-
-.agrupacion{
-    background-color: var(--color-fucsia);
-}
-
-.textual{
-    background-color: var(--color-rosa-mexicano);
-}
-
-.multimedia{
-    background-color: var(--color-salmon);
-}
-
-.tablas{
-    background-color: var(--color-naranja);
-}
-
-.formulario{
-    background-color: var(--color-verde-limon);
-}
-
-.scripting{
-    background-color: var(--color-verde);
-}
-
-.interactivas{
-    background-color: var(--color-azul-verde);
-}
-
-.semanticas{
-    background-color: var(--color-amarillo-naranja);
-}
-
-.ideograficas{
-    background-color: var(--color-marron);
-}
-
-.edicion{
-    background-color: var(--color-nude);
-}
-
-.obsoletas{
-    background-color: var(--color-morado-nude);
+    transition-property: transform, z-index, left, right, top, bottom;
+    transition-duration: 100ms, 0ms, 200ms, 200ms, 200ms, 200ms;
+    transition-delay: 0ms, 100ms, 0ms, 0ms, 0ms, 0ms;
 }
 
 .element .atomic-number {
-    text-align: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 2px;
 }
 
 .element .label {
@@ -135,7 +109,14 @@
     font-size: 0.7vw;
 }
 
-
+.element .atomic-mass {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 2px;
+    text-align: center;
+}
 
 .element .atomic-weight {
     position: absolute;
@@ -159,6 +140,71 @@
     transform: scale(0.1);
 }
 
+.element .model .orbital {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border: 5px solid;
+    border-radius: 50%;
+    opacity: 0.25;
+}
+
+.element .model .orbital:nth-child(1) {
+    margin: 10%;
+    animation-duration: 40s;
+}
+
+.element .model .orbital:nth-child(2) {
+    margin: 15.5%;
+    animation-duration: 34s;
+}
+
+.element .model .orbital:nth-child(3) {
+    margin: 21%;
+    animation-duration: 28s;
+}
+
+.element .model .orbital:nth-child(4) {
+    margin: 26.5%;
+    animation-duration: 22s;
+}
+
+.element .model .orbital:nth-child(5) {
+    margin: 32%;
+    animation-duration: 16s;
+}
+
+.element .model .orbital:nth-child(6) {
+    margin: 37.5%;
+    animation-duration: 10s;
+}
+
+.element .model .orbital:nth-child(7) {
+    margin: 43%;
+    animation-duration: 4s;
+}
+
+.element .model .orbital .electron {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.element .model .orbital .electron::before {
+    content: "";
+    position: absolute;
+    left: calc(50% - 0.7vw);
+    top: -0.7vw;
+    width: 1.4vw;
+    height: 1.4vw;
+    background-color: currentColor;
+    border-radius: 50%;
+    opacity: 0.75;
+}
 
 .element input[type="radio"] {
     position: absolute;
@@ -279,7 +325,6 @@
 
 .alkali-metal {
     color: #ecbe59;
-
 }
 
 .alkaline-earth-metal {
@@ -317,7 +362,6 @@
 .unknown {
     color: #cccccc;
 }
-
 
 
 .r1 {
